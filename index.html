@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NEXUS CITY CFW - قوانين السرفر</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- إضافة خطوط Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header with Logo -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="skull-logo">
+                        <img src="images/logo.png" alt="NEXUS CITY Logo">
+                    </div>
+                    <div class="server-name">
+                        <span class="cfw">CFW</span>
+                        <span class="city">CITY</span>
+                        <span class="nexus">NEXUS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-transparent-image">
+            <img src="images/NEXUS.png" alt="NEXUS CITY Logo">
+        </div>
+        <div class="hero-content">
+            <div class="hero-skull">
+                <img src="images/LOGO.png" alt="Hero Icon">
+            </div>
+            <h1 class="hero-title">مرحباً بك في <span class="nexus">NEXUS</span> <span class="city">CITY</span></h1>
+            <p class="hero-subtitle"> السرفر الأقوى في عالم الـ FiveM </p>
+        </div>
+    </section>
+
+    <div class="section-toggle-buttons">
+        <button id="rulesBtn" class="section-toggle-btn active" onclick="showSection('rules')">
+            <img src="images/general-rules-icon.png" alt="القوانين" class="btn-icon">
+            القوانين
+        </button>
+        <button id="celebritiesBtn" class="section-toggle-btn" onclick="showSection('celebrities')">
+            <img src="images/famous-icon.png" alt="المشاهير" class="btn-icon">
+            المشاهير
+        </button>
+    </div>
+
+    <!-- Rules Section -->
+    <section class="rules-section">
+        <div class="container">
+            <h2 class="section-title">📋 قوانين السرفر</h2>
+            <p class="rules-intro">
+                يجب على جميع اللاعبين قراءة والالتزام بهذه القوانين. عدم المعرفة بالقوانين ليس عذراً لكسرها.
+            </p>
+
+            <div class="rules-container">
+                <!-- دستور المدينة -->
+                <div class="rule-category">
+                    <div class="rule-header" onclick="toggleRule('city-constitution')">
+                        <div class="rule-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h3>دستور المدينة</h3>
+                        <div class="toggle-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="rule-content" id="city-constitution">
+                        <div class="rule-item">
+                            <h4><i class="fas fa-info-circle"></i> تعريف الحياة الواقعية</h4>
+                            <div class="rule-details">
+                                <p>تقمص الشخصية داخل الرول بلاي سواء كانت شخصيتك - مسعف,عسكري,عصابة,مواطن سواء شاب او
+                                    رجل مسن</p>
+                            </div>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4><i class="fas fa-heartbeat"></i> تعريف تقدير الحياة</h4>
+                            <div class="rule-details">
+                                <p>يجب عليك تقدير موقفك في اي حالة كانت متواجد فيها</p>
+                            </div>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4><i class="fas fa-car-crash"></i> VDM</h4>
+                            <div class="rule-details">
+                                <p>يمنع منعا باتا استخدام المركبة كسلاح</p>
+                            </div>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4><i class="fas fa-skull"></i> RDM</h4>
+                            <div class="rule-details">
+                                <p>يمنع منعا باتا القتل العشوائي</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- القوانين العامة -->
+                <div class="rule-category">
+                    <div class="rule-header" onclick="toggleRule('general-rules')">
+                        <div class="rule-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>القوانين العامة</h3>
+                        <div class="toggle-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="rule-content" id="general-rules">
+                        <div class="rule-item"><span class="rule-number">1.</span> <span class="rule-text">بقياسه
+                                بالحياة الواقعية [ RP ] يجب عليك فهم معنى الـ [ RP ]</span></div>
+                        <div class="rule-item"><span class="rule-number">2.</span> <span class="rule-text">يمنع التحدث
+                                بالسياسه والاعراض والدين وايضا المضايقات وفي حال تم رصد اياً منها ( باند نهائي )</span>
+                        </div>
+                        <div class="rule-item"><span class="rule-number">3.</span> <span class="rule-text">يمنع تقليد
+                                الكركترات والاسماء الموجوده بالسيرفر بأي طريقة كانت</span></div>
+                        <div class="rule-item"><span class="rule-number">4.</span> <span class="rule-text">يجب وضع اسم
+                                كركتر واقعي</span></div>
+                        <div class="rule-item"><span class="rule-number">5.</span> <span class="rule-text">في حال حضرت
+                                سيناريو باحدى كركتراتك , يمنع حضور كركتر اخر لك بالسيناريو نفسه</span></div>
+                        <div class="rule-item"><span class="rule-number">6.</span> <span class="rule-text">يمنع دخول
+                                البيت او الشقه اثناء السيناريو</span></div>
+                        <div class="rule-item"><span class="rule-number">7.</span> <span class="rule-text">يجب تشغيل
+                                برنامج التصوير مع وجود الصوت ( 10 د) اثناء اللعب ويجب ان يكون على الشاشة كاملة ويمنع
+                                استخدام خاصية القيم كابتشر وسيتم محاسبتك في حال عدم وجوده</span></div>
+                        <div class="rule-item"><span class="rule-number">8.</span> <span class="rule-text">يمنع التدخل
+                                في سيناريو قائم</span></div>
+                        <div class="rule-item"><span class="rule-number">9.</span> <span class="rule-text">يمنع لبس
+                                الملابس الجيشية والعسكريه ومن ضمنها الحزام العسكري</span></div>
+                        <div class="rule-item"><span class="rule-number">10.</span> <span class="rule-text">يمنع التعرض
+                                للمسعفين الا في حال تعرض لك ايضا يمنع سرقة وتدمير اغراض الشرطة والمسعفيين</span></div>
+                        <div class="rule-item"><span class="rule-number">11.</span> <span class="rule-text">تمنع الشخصنة
+                                بجميع اشكالها وانواعها</span></div>
+                        <div class="rule-item"><span class="rule-number">12.</span> <span class="rule-text">يمنع التواصل
+                                الغير شرعي مثل : الدسكورد والبرامج المشابه له (Meta Gaming)</span></div>
+                        <div class="rule-item"><span class="rule-number">13.</span> <span class="rule-text">يمنع إرتداء
+                                او إستعمال اي خوذة اثناء مشاركتك في اي إطلق ناري</span></div>
+                        <div class="rule-item"><span class="rule-number">14.</span> <span class="rule-text">يمنع استخدام
+                                اي جرافيكس او برنامج خارجي او ملفات تساعد او تسهل طريقة اللعب</span></div>
+                        <div class="rule-item"><span class="rule-number">15.</span> <span class="rule-text">يمنع على إي
+                                لاعب حرق او تفجير جثة ونقلها , يمنع إهانة اي لاعب بعد قتله</span></div>
+                        <div class="rule-item"><span class="rule-number">16.</span> <span class="rule-text">يمنع تغيير
+                                ملامح وجهك او شعرك بعد قيامك بعملية اجرامية منعا باتا</span></div>
+                        <div class="rule-item"><span class="rule-number">17.</span> <span class="rule-text">يمنع على
+                                الشخص الميت اثناء السيناريو العودة إليه مره اخرى</span></div>
+                        <div class="rule-item"><span class="rule-number">18.</span> <span class="rule-text">عدم ترابط
+                                شخصيتك الاولى , بالشخصية الثانية , يمنع تكرار الاسامي بين الكركترات</span></div>
+                        <div class="rule-item"><span class="rule-number">19.</span> <span class="rule-text">يجب عليك
+                                تقمص شخصيتك مع الكل حتى ولو خويك بمعنى لو انك عسكري و خويك مجرم م تتساهل معه
+                                ابداً</span></div>
+                        <div class="rule-item"><span class="rule-number">20.</span> <span class="rule-text">في حال عندك
+                                شخصيه وبتغير الصوت حقها في اي برنامج يجب ان الصوت يبقى ثابت على هذي الشخصيه او
+                                الكاركتر</span></div>
+                        <div class="rule-item"><span class="rule-number">21.</span> <span class="rule-text">يجب عليك
+                                تقدير قيمة مركبتك والقيادة بشكل سليم و تجنب صدم الاخرين</span></div>
+                        <div class="rule-item"><span class="rule-number">22.</span> <span class="rule-text">الكذب
+                                بالمسطلحات التالية { سحر او باخذ حبه او صداع والخ } .. يعرضك للمحاسبة الادارية</span>
+                        </div>
+                        <div class="rule-item"><span class="rule-number">23.</span> <span class="rule-text">( ممنوع
+                                الكلام المشفر بجميع انواعه بمعنى ) اي كلام له اكثر من معنى ممنوع</span></div>
+                        <div class="rule-item"><span class="rule-number">24.</span> <span class="rule-text">يمنع منعاً
+                                باتا استخدام ادوات الغش كالقلتشات او الثغرات او استغلال اوامر الشات ( باند نهائي
+                                )</span></div>
+                        <div class="rule-item"><span class="rule-number">25.</span> <span class="rule-text">عند الموت او
+                                التحلل يجب عليك نسيان اخر 10 دقائق</span></div>
+                        <div class="rule-item"><span class="rule-number">26.</span> <span class="rule-text">يمنع منعًا
+                                باتًا تواجدك بالسيرفر ودخول اي بث للسيرفر</span></div>
+                        <div class="rule-item"><span class="rule-number">27.</span> <span class="rule-text">يمنع التلفظ
+                                بالالفاظ السوقية بدون اي سبب مقنع وفي حال تم رصد ذلك سيتم محاسبتك محاسبة ادارية
+                                صارمة</span></div>
+                        <div class="rule-item"><span class="rule-number">28.</span> <span class="rule-text">يمنع عليك
+                                منعا باتا طلق النار في اي منطقه حكومية</span></div>
+                        <div class="rule-item"><span class="rule-number">29.</span> <span class="rule-text">يجب على جميع
+                                اللاعبين لبس ملابس مناسبة لأعمالهم, وتطبيق "الار بي" المناسب للوظيفة</span></div>
+                        <div class="rule-item"><span class="rule-number">30.</span> <span class="rule-text">يمنع مشاركتك
+                                لاي من معلوماتك او حساباتك الشخصية (ستيم - روك ستار - فايف ام ) مع اي شخص كان واستخدامها
+                                لالدخول للسيرفر يعرضكم جميعا للباند النهائي ويندرج ذلك تحت تعدد الحسابات</span></div>
+                        <div class="rule-item"><span class="rule-number">31.</span> <span class="rule-text">يمنع على
+                                جميع اللاعبين التخريم أو الطلق من خلف الجدار في جميع الأماكن</span></div>
+                        <div class="rule-item"><span class="rule-number">32.</span> <span class="rule-text">يمنع
+                                الاحتماء والاستفزاز بالمناطق الآمنة ، ويحق استكمال السيناريو في حال الاحتماء بمناطق امنه
+                                الا مركز الشرطة</span></div>
+                        <div class="rule-item"><span class="rule-number">33.</span> <span class="rule-text">يمنع سرقة
+                                اغراض الشرطة او المسعفين</span></div>
+                        <div class="rule-item"><span class="rule-number">34.</span> <span class="rule-text">يمنع القفز
+                                بالمركبة قفزات انتحاريه</span></div>
+                        <div class="rule-item"><span class="rule-number">35.</span> <span class="rule-text">يجب ان يكون
+                                التهديد بشكل مباشر حيث لا يمكنك التهديد وانت بداخل المركبة</span></div>
+                        <div class="rule-item"><span class="rule-number">36.</span> <span class="rule-text">في حال تم
+                                تهديد المواطن وانصاع لاوامرك لا يحق لك قتله تحت اي ظرف كان ، في حال عدم الانصياع ومحاولة
+                                المقاومة يحق لك قتلة و تلويته</span></div>
+                    </div>
+                </div>
+
+                <!-- قوانين الديسكورد -->
+                <div class="rule-category">
+                    <div class="rule-header" onclick="toggleRule('discord-rules')">
+                        <div class="rule-icon">
+                            <i class="fab fa-discord"></i>
+                        </div>
+                        <h3>قوانين الديسكورد</h3>
+                        <div class="toggle-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="rule-content" id="discord-rules">
+                        <div class="rule-item"><span class="rule-number">1.</span> <span class="rule-text">يمنع السب او
+                                الشتم بجميع اشكالة</span></div>
+                        <div class="rule-item"><span class="rule-number">2.</span> <span class="rule-text">يمنع إستخدام
+                                اسماء غير لائقة</span></div>
+                        <div class="rule-item"><span class="rule-number">3.</span> <span class="rule-text">عدم الخوض
+                                بالامور الدينية او السياسية او التطرق لها بأي شكل من الاشكال</span></div>
+                        <div class="rule-item"><span class="rule-number">4.</span> <span class="rule-text">يمنع استفزاز
+                                او اهانة اي شخص باي طريقة</span></div>
+                        <div class="rule-item"><span class="rule-number">5.</span> <span class="rule-text">يمنع نشر
+                                الروابط لترويج للسيرفرات الثانية</span></div>
+                        <div class="rule-item"><span class="rule-number">6.</span> <span class="rule-text">يمنع ان تمنشن
+                                اداري لحل مشكلتك في غير الشات المخصص</span></div>
+                        <div class="rule-item"><span class="rule-number">7.</span> <span class="rule-text">يمنع ارسال
+                                الرسائل في غير الشات المخصص</span></div>
+                        <div class="rule-item"><span class="rule-number">8.</span> <span class="rule-text">يمنع تكرار
+                                المنشن لشخص اكثر من مرة</span></div>
+                        <div class="rule-item"><span class="rule-number">9.</span> <span class="rule-text">يمنع تكرار
+                                الرسائل او الاحرف او الملصقات</span></div>
+                        <div class="rule-item"><span class="rule-number">10.</span> <span class="rule-text">يمنع ارسال
+                                الاوامر في غير الشات المخصص</span></div>
+                        <div class="rule-item"><span class="rule-number">11.</span> <span class="rule-text">يمنع ارسال
+                                بعض الايموجيات المخلة</span></div>
+                        <div class="rule-item"><span class="rule-number">12.</span> <span class="rule-text">يمنع التكلم
+                                في المواضيع السياسية</span></div>
+                        <div class="rule-item"><span class="rule-number">13.</span> <span class="rule-text">في حالة
+                                خروجك من ديسكورد المدينة لأي سبب كان لن يتم تعويضك في حزمك او رولاتك نهائيًا</span>
+                        </div>
+                        <div class="rule-item">
+                            <h4><i class="fas fa-exclamation-triangle"></i> تحذير موهم : </h4>
+                            <div class="rule-details">
+                                <p><i class="fas fa-user-friends"></i>-يحق لأدارة السيرفر التصرف بما تراه مناسباً في حال
+                                    المخالفة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المناطق الآمنة -->
+                <div class="rule-category">
+                    <div class="rule-header" onclick="toggleRule('safe-zones')">
+                        <div class="rule-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>المناطق الآمنة</h3>
+                        <div class="toggle-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="rule-content" id="safe-zones">
+                        <div class="rule-item">
+                            <div class="rule-details">
+                                <p>المناطق الآمنة التي يمنع فيها أي عمل إجرامي:</p>
+                                <p>يمنع فيها منعاً باتا جميع أنواع الإجرام والشغب مثل حمل السلاح وسرقة السيارات وضرب
+                                    المواطنين (بوكسات) أو بسلاح أبيض والإستفزاز ومقاومة الشرطة أو تهريب المجرمين وعقوبة
+                                    المخالفة فيها شديدة جدا..</p>
+                            </div>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4><i class="fas fa-map-marker-alt"></i> المناطق الآمنة تشمل:</h4>
+                            <div class="rule-details">
+                                <p><i class="fas fa-gavel"></i> المحكمة</p>
+                                <p><i class="fas fa-hospital"></i> المستشفيات وحدود شوارعها</p>
+                                <p><i class="fas fa-police-station"></i> مركز الشرطه والمحيط به</p>
+                                <p><i class="fas fa-lock"></i> الحبس والمحيط به</p>
+                                <p><i class="fas fa-recycle"></i> أماكن فرامات الموارد (اعادة التدوير) ومناطق السكراب
+                                    (الروابش)</p>
+                                <p><i class="fas fa-briefcase"></i> اماكن العمل والوظائف العامة</p>
+                                <p><i class="fas fa-tools"></i> مراكز الميكانيكا</p>
+                                <p><i class="fas fa-car"></i> معارض السيارات</p>
+                                <p><i class="fas fa-shopping-basket"></i> بقالات الي عند سرقه فقط</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قوانين السرقات المعدلة -->
+                <div class="rule-category">
+                    <div class="rule-header" onclick="toggleRule('robbery-rules')">
+                        <div class="rule-icon">
+                            <i class="fas fa-mask"></i>
+                        </div>
+                        <h3>قوانين السرقات</h3>
+                        <div class="toggle-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="rule-content" id="robbery-rules">
+                        <!-- سرقة البقالة -->
+                        <div class="rule-item robbery-type">
+                            <h4>
+                                <i class="fas fa-shopping-basket"></i>
+                                سرقة البقالة:
+                            </h4>
+                            <div class="robbery-details">
+                                <p>
+                                    <i class="fas fa-users"></i>
+                                    عدد العصابة: 2-4 أشخاص
+                                </p>
+                                <p>
+                                    <i class="fas fa-user-tie"></i>
+                                    شرط وجود: 2 شرطة على الأقل
+                                </p>
+                                <p>
+                                    <i class="fas fa-clock"></i>
+                                    مدة السرقة: 10 دقائق كحد أقصى
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- سرقة محل الأسلحة -->
+                        <div class="rule-item robbery-type">
+                            <h4>
+                                <i class="fas fa-crosshairs"></i>
+                                سرقة محل الأسلحة:
+                            </h4>
+                            <div class="robbery-details">
+                                <p>
+                                    <i class="fas fa-users"></i>
+                                    عدد العصابة: 3-5 أشخاص
+                                </p>
+                                <p>
+                                    <i class="fas fa-user-tie"></i>
+                                    شرط وجود: 3 شرطة على الأقل
+                                </p>
+                                <p>
+                                    <i class="fas fa-clock"></i>
+                                    مدة السرقة: 15 دقائق كحد أقصى
+                                </p>
+                                <p>
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    يُمنع استخدام الأسلحة الثقيلة
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- سرقة محل المجوهرات -->
+                        <div class="rule-item robbery-type">
+                            <h4>
+                                <i class="fas fa-gem"></i>
+                                سرقة محل المجوهرات:
+                            </h4>
+                            <div class="robbery-details">
+                                <p>
+                                    <i class="fas fa-users"></i>
+                                    عدد العصابة: 4-6 أشخاص
+                                </p>
+                                <p>
+                                    <i class="fas fa-user-tie"></i>
+                                    شرط وجود: 4 شرطة على الأقل
+                                </p>
+                                <p>
+                                    <i class="fas fa-user-friends"></i>
+                                    شرط وجود رهينة حقيقية
+                                </p>
+                                <p>
+                                    <i class="fas fa-clock"></i>
+                                    مدة السرقة: 20 دقائق كحد أقصى
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- سرقة البنك المركزي -->
+                        <div class="rule-item robbery-type">
+                            <h4>
+                                <i class="fas fa-landmark"></i>
+                                سرقة البنك المركزي:
+                            </h4>
+                            <div class="robbery-details">
+                                <p>
+                                    <i class="fas fa-users"></i>
+                                    عدد العصابة: 5-8 أشخاص
+                                </p>
+                                <p>
+                                    <i class="fas fa-user-tie"></i>
+                                    شرط وجود: 5 شرطة على الأقل
+                                </p>
+                                <p>
+                                    <i class="fas fa-user-friends"></i>
+                                    شرط وجود رهينة حقيقية
+                                </p>
+                                <p>
+                                    <i class="fas fa-lock"></i>
+                                    يُشترط تخطيط كامل وتنسيق داخلي واضح
+                                </p>
+                                <p>
+                                    <i class="fas fa-clock"></i>
+                                    مدة السرقة: 30 دقائق كحد أقصى
+                                </p>
+                                <p>
+                                    <i class="fas fa-calendar-alt"></i>
+                                    يُسمح بها مرة واحدة كل 24 ساعة
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- سرقة شاحنة الأموال -->
+                        <div class="rule-item robbery-type">
+                            <h4>
+                                <i class="fas fa-truck-moving"></i>
+                                سرقة شاحنة الأموال:
+                            </h4>
+                            <div class="robbery-details">
+                                <p>
+                                    <i class="fas fa-users"></i>
+                                    عدد العصابة: 4-6 أشخاص
+                                </p>
+                                <p>
+                                    <i class="fas fa-user-tie"></i>
+                                    شرط وجود: 4 شرطة على الأقل
+                                </p>
+                                <p>
+                                    <i class="fas fa-car-crash"></i>
+                                    يجب إيقاف الشاحنة أولاً بطريقة واقعية
+                                </p>
+                                <p>
+                                    <i class="fas fa-clock"></i>
+                                    مدة السرقة: 15 دقائق كحد أقصى
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قوانين الإجرام -->
+                <div class="rule-category">
+                    <div class="rule-header" onclick="toggleRule('crime-rules')">
+                        <div class="rule-icon">
+                            <i class="fas fa-skull"></i>
+                        </div>
+                        <h3>قوانين الإجرام</h3>
+                        <div class="toggle-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="rule-content" id="crime-rules">
+                        <div class="rule-item"><span class="rule-number">1.</span> <span class="rule-text">يجب عليك فهم
+                                معنى الحياة الواقعية سواء كنت مجرم او رهينة وذلك بقياسها بالحياة الواقعية</span></div>
+                        <div class="rule-item"><span class="rule-number">2.</span> <span class="rule-text">يمنع الاتفاق
+                                مع اي شخص ليصبح رهينة</span></div>
+                        <div class="rule-item"><span class="rule-number">3.</span> <span class="rule-text">مدة رهن
+                                الرهينة ( 20 د) الا في حال بدأ السيناريو يلغى الوقت</span></div>
+                        <div class="rule-item"><span class="rule-number">4.</span> <span class="rule-text">يمنع المتاجره
+                                بالممنوعات في المناطق الامنه ويمنع النصب والاحتيال في المناطق الامنه</span></div>
+                        <div class="rule-item"><span class="rule-number">5.</span> <span class="rule-text">يمنع سرقة
+                                المواطن الا بسبب وجود عداوه واثبات العداوه باكثر من موقف ( 3 مواقف وتكون مثبته بالمقاطع
+                                )</span></div>
+                        <div class="rule-item"><span class="rule-number">6.</span> <span class="rule-text">حد المجموعات
+                                او العائلات المسموح فقط 10 اشخاص</span></div>
+                        <div class="rule-item"><span class="rule-number">7.</span> <span class="rule-text">يمنع تحالف
+                                العصابات ضد الداخلية الى في حاله امر من المافيا او ضد مجموعة او عصابة اخرى باستثناء
+                                السرقة ويجب الالتزام بعدد السرقة</span></div>
+                        <div class="rule-item"><span class="rule-number">8.</span> <span class="rule-text">يمنع منعا
+                                باتا خطف رهينه بغاية التوجه للسجن والتفاوض مع العساكر لاطلاق سراح اي سجين</span></div>
+                        <div class="rule-item"><span class="rule-number">9.</span> <span class="rule-text">يمنع الاعتداء
+                                على مفاوض الشرطة في السيناريو ويمنع الاعتداء على مفاوض المجرمين</span></div>
+                        <div class="rule-item"><span class="rule-number">10.</span> <span class="rule-text">يمنع مقاومة
+                                السلاح الناري بسلاح ابيض مهما كانت الحاله + يمنع مقاومة اي سلاح ثقيل بسلاح خفيف مثل
+                                الجلوك</span></div>
+                        <div class="rule-item"><span class="rule-number">11.</span> <span class="rule-text">يمنع اطلاق
+                                النار او خطف العسكري في اي قضية مروريه</span></div>
+                        <div class="rule-item"><span class="rule-number">12.</span> <span class="rule-text">يمنع منعاً
+                                باتاً مشاركة الرهينة للخاطفين في نص السيناريو</span></div>
+                        <div class="rule-item"><span class="rule-number">13.</span> <span class="rule-text">يمنع تقليد
+                                ملابس احد العصابات</span></div>
+                        <div class="rule-item"><span class="rule-number">14.</span> <span class="rule-text">يمنع الخطف
+                                والتهديد في حال وجود مواطن او اثنين من المدنيين او اكثر</span></div>
+                        <div class="rule-item"><span class="rule-number">15.</span> <span class="rule-text">يمنع التعدي
+                                او اختطاف سائق السطحه او طلب تاكسي او ميكانيكي او محامي او اي شخص في اي وظيفة
+                                حكوميه</span></div>
+                        <div class="rule-item"><span class="rule-number">16.</span> <span class="rule-text">يمنع على إي
+                                فرد او جماعة السرقة ثم الانتظار لفترة في نفس الموقع سواء للتفاوض او غيره</span></div>
+                    </div>
+                </div>
+
+                <!-- قوانين العصابات -->
+                <div class="rule-category">
+                    <div class="rule-header" onclick="toggleRule('gang-rules')">
+                        <div class="rule-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>قوانين العصابات</h3>
+                        <div class="toggle-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="rule-content" id="gang-rules">
+                        <div class="rule-item"><span class="rule-number">1.</span> <span class="rule-text">يحق لمسؤول
+                                العصابات تعديل او حذف او اضافة القوانين في اى وقت ويجب مراجعة القوانين من حين إلى
+                                آخر</span></div>
+                        <div class="rule-item"><span class="rule-number">2.</span> <span class="rule-text">لا يمكن
+                                للعصابات الاتحاد في الفايت او العداوة مع عصابة اخري سواء مع عصابة او مع الشرطة</span>
+                        </div>
+                        <div class="rule-item"><span class="rule-number">3.</span> <span class="rule-text">لا يمكن ان
+                                يتم اعلان العداوه او حرب العصابة الا من خلال التأكيد بين قادة العصابتين (البوس او
+                                الكوبوس)</span></div>
+                        <div class="rule-item"><span class="rule-number">4.</span> <span class="rule-text">في حال وقع
+                                فايت بين عصابتين في مكان مأهول بالسكن يحق للشرطة التدخل بشكل مباشر واذا كان في مكان نائي
+                                يحق للشرطة التدخل بشكل غير مباشر ( بعد انتهاء فايت العصابات )</span></div>
+                        <div class="rule-item"><span class="rule-number">5.</span> <span class="rule-text">لا تتكون
+                                عداوة بين عصابتين بسبب خطف احد اعضائها الا اذا كانت عصابة ذات سلطة اجرامية عالية او اذا
+                                كان المخطوف هو قائد العصابة</span></div>
+                        <div class="rule-item"><span class="rule-number">6.</span> <span class="rule-text">لا يمكن
+                                الاتفاق على اى حدث بين اى عصابتين الا من خلال الموافقه الكاملة من مسئول العصابات او
+                                النائب</span></div>
+                        <div class="rule-item"><span class="rule-number">7.</span> <span class="rule-text">عند وجود اى
+                                تعدي من افراد العصابة على قوانين العصابات سيتم اتخاذ العقوبات اللازمه مع العصابة</span>
+                        </div>
+                        <div class="rule-item"><span class="rule-number">8.</span> <span class="rule-text">يمنع استقطاب
+                                أعضاء العصابة بشكل عشوائي ويجب ان يوجد ثقة مبنية داخل الرول بلاي</span></div>
+                        <div class="rule-item"><span class="rule-number">9.</span> <span class="rule-text">قائد العصابة
+                                هو المسؤول الأول والاخير امام الإدارة في المخالفات الجماعية</span></div>
+                        <div class="rule-item"><span class="rule-number">10.</span> <span class="rule-text">تعطى العصابة
+                                تحذير او أكثر في حال مخالفة القوانين وعند التكرار قد تصل الى تجميد كامل العصابة</span>
+                        </div>
+                        <div class="rule-item"><span class="rule-number">11.</span> <span class="rule-text">تتكون
+                                العداوة بين عصابتين الا لأسباب مقنعة ويجب ان تكون مصورة</span></div>
+                        <div class="rule-item"><span class="rule-number">12.</span> <span class="rule-text">في حال عدم
+                                التواجد او التفاعل في اى عصابه من العصابات المتاحة سيتم تفكيك العصابه بدون الرجوع الى
+                                البوس</span></div>
+                        <div class="rule-item"><span class="rule-number">13.</span> <span class="rule-text">عدد
+                                التحذيرات لتفكيك العصابه 3 تحذيرات فقط</span></div>
+                        <div class="rule-item"><span class="rule-number">14.</span> <span class="rule-text">لن يتم الغاء
+                                تحذير العصابه الا بعد اسبوعان من اخذ التحذير (يحق لمسؤول العصابات تغير القانون حسب
+                                مخالفة كل عصابة)</span></div>
+                        <div class="rule-item"><span class="rule-number">15.</span> <span class="rule-text">في حال أخذت
+                                العصابة تحذيرين سيتم مضاعفة مدة التحذيرات على العصابة</span></div>
+                        <div class="rule-item"><span class="rule-number">16.</span> <span class="rule-text">يمنع منعا
+                                باتا التهديد من داخل السياره التهديد يكون وانت خارج السيارة</span></div>
+                        <div class="rule-item"><span class="rule-number">17.</span> <span class="rule-text">لا يمكن
+                                الخروج من عصابة و الدخول لأي عصابة آخر الا بعد اسبوع على الأقل</span></div>
+                        <div class="rule-item"><span class="rule-number">18.</span> <span class="rule-text">يلتزم كل فرد
+                                يريد الخروج من العصابة بتحمل المسؤولية الكامله المتعلقة بحياته في RP</span></div>
+                        <div class="rule-item"><span class="rule-number">19.</span> <span class="rule-text">أي عصابة او
+                                فرد يتبع عصابة يقوم بأي شكل من الأشكال بإهانة او عدم إحترام للبيق بوس اثناء تواجده سيتم
+                                التعامل معه داخل المدينة وخارجها</span></div>
+                    </div>
+                </div>
+
+                <!-- قوانين الخطف -->
+                <div class="rule-category">
+                    <div class="rule-header" onclick="toggleRule('kidnapping-rules')">
+                        <div class="rule-icon">
+                            <i class="fas fa-handcuffs"></i>
+                        </div>
+                        <h3>قوانين الخطف</h3>
+                        <div class="toggle-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="rule-content" id="kidnapping-rules">
+                        <div class="rule-item">
+                            <h4><i class="fas fa-exclamation-triangle"></i> حالات الخطف المسموحة:</h4>
+                            <div class="rule-details">
+                                <p><i class="fas fa-user"></i> تستطيع خطف اي مواطن لاخذه رهينة في سيناريو فقط ولا يحق لك
+                                    سرقته</p>
+                                <p><i class="fas fa-user-friends"></i> وجود عداوة مسبقة بينكما ويجب ان تكون مثبتة بمقطع
+                                    فيديو ويحق لك سرقته أو اخذه رهينة في سيناريو أو حتى قتله</p>
+                            </div>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4><i class="fas fa-handshake"></i> شروط التعامل مع الرهينة:</h4>
+                            <div class="rule-details">
+                                <p><i class="fas fa-user-shield"></i> يجب على المخطوف تقمص شخصية الرهينة</p>
+                                <p><i class="fas fa-skull-crossbones"></i> لايحق للمجرمين قتل الرهينة اذا تم الاتفاق
+                                    بينهم وبين الشرطة</p>
+                                <p><i class="fas fa-money-bill-wave"></i> الحد الاقصى لطلب مبلغ تحرير رهينة واحدة هي
+                                    2000$</p>
+                                <p><i class="fas fa-ban"></i> يمنع قتل الاشخاص طالما كانوا ينفذون اوامرك</p>
+                                <p><i class="fas fa-users-slash"></i> يمنع مشاركة الرهينة مع السارقون في السيناريو</p>
+                                <p><i class="fas fa-map-marker-alt"></i> يمنع منعاً باتاً المفاوضة على رهينة غير موجودة
+                                    في موقع السرقة</p>
+                                <p><i class="fas fa-gun"></i> يحق للمجرم قتل الرهينة فقط في حال عدم الاتفاق مع الشرطة
+                                    اثناء التفاوض</p>
+                                <p><i class="fas fa-taxi"></i> ممنوع طلب شرطة او تاكسي او ميكانيكي وخطفهم</p>
+                                <p><i class="fas fa-clock"></i> اذا خطفت مواطن واصبح رهينه ، لديك فقط 15 دقيقة منذ خطفه.
+                                    الا في حالة بدأت السرقة</p>
+                                <p><i class="fas fa-running"></i> في حال تهديد مواطن وهروبه لاحد المناطق الآمنة يحق لك
+                                    تهديده وخطفه فيها او قتله الا عند هروبه لمركز الشرطة والمستشفى</p>
+                                <p><i class="fas fa-users"></i> يجب تقدير حياتك وعدم مقاومة الاشخاص الاكثر منكم عدد</p>
+                                <p><i class="fas fa-hand-holding-usd"></i> يمنع منعا باتا اختطاف رهينة بالاتفاق سواء كان
+                                    مع صديقك او غيره كاعطاءه جزء من المبلغ</p>
+                                <p><i class="fas fa-car-side"></i> ممنوع انك تخطف وقدامك زحمة لازم قبلها تتاكد انه مافيش
+                                    عساكر ولا زحمة</p>
+                            </div>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4><i class="fas fa-ban"></i> حالات منع المقاومة:</h4>
+                            <div class="rule-details">
+                                <p><i class="fas fa-gun"></i> يمنع منعاً باتاً مقاومة شخص وجه عليك سلاح ناري بالقرب منك
+                                    قبل اظهر سلاحك مهما كان نوع سلاحك</p>
+                                <p><i class="fas fa-khanda"></i> يمنع مقاومة شخص وجه سلاح أبيض عليك "بشرط انه قريب جدا
+                                    منك"</p>
+                                <p><i class="fas fa-gun"></i> يمنع مقاومة شخص لديه سلاح ناري و بـ سلاح أبيض</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- التعامل مع الشرطة -->
+                <div class="rule-category">
+                    <div class="rule-header" onclick="toggleRule('police-interaction')">
+                        <div class="rule-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>التعامل مع الشرطة</h3>
+                        <div class="toggle-arrow"> <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="rule-content" id="police-interaction">
+                        <div class="rule-item">
+                            <span class="rule-number">1.</span>
+                            <span class="rule-text">في حال تم محاصرتك من قبل دوريتين شرطه بشكل تام يمنع استعمال المركبه
+                                لصدم الهروب</span>
+                        </div>
+                        <div class="rule-item"><span class="rule-number">2.</span>
+                            <span class="rule-text">يسمح الهروب على الاقدام في حال تم محاصرة المركبة</span>
+                        </div>
+                        <div class="rule-item"><span class="rule-number">3.</span>
+                            <span class="rule-text">يجب على المواطن احترام الشرطي والشرطي يحترم المواطن</span>
+                        </div>
+                        <div class="rule-item"><span class="rule-number">4.</span>
+                            <span class="rule-text">لايسمح للمواطن استفزاز الشرطي (التلقيح الغير اخلاقي)</span>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-number">5.</span> <span class="rule-text">يحق للمواطن طلب محامي (يستثنى
+                                منها القضايا الجنائية الثابتة)</span>
+                        </div>
+                        <div class="rule-item"><span class="rule-number">6.</span> <span class="rule-text">يمكن للمواطن
+                                تقديم شكوى ضد أي عسكري ويتم إستلامها من قبل الشرطة العسكرية</span></div>
+                        <div class="rule-item"><span class="rule-number">7.</span> <span class="rule-text">هروبك بدون
+                                سبب يحملك جميع المسؤوليات واقصى العقوبات وتتحول لشخص مشتبه به</span></div>
+                        <div class="rule-item"><span class="rule-number">8.</span> <span class="rule-text">عند الاستيقاف
+                                المروري يجب عليك الانصياع ل اوامر الشرطي تجنب العناد وتصعيد الامر</span></div>
+                        <div class="rule-item"><span class="rule-number">9.</span> <span class="rule-text">لا يسمح
+                                للشرطي إهانه المواطن باي شكل من الاشكال</span></div>
+                        <div class="rule-item"><span class="rule-number">10.</span> <span class="rule-text">عند دخولك اي
+                                موقع سرقة يجب عليك البقاء بالداخل وخروج المفاوض فقط</span></div>
+                        <div class="rule-item"><span class="rule-number">11.</span> <span class="rule-text">اسلوبك مع
+                                المفاوض لابد يكون رسمي يمنع الاستهزاء بالرهينه او بالمفاوض</span></div>
+                        <div class="rule-item"><span class="rule-number">12.</span> <span class="rule-text">يمنع اطلاق
+                                النار او خطف العسكري في اي قضية مرورية</span></div>
+                        <div class="rule-item"><span class="rule-number">13.</span> <span class="rule-text">يتم التعامل
+                                مع الشرطي رقابياً في حالة القتل العشوائي في حالة لم يكون عليك اي بلاغ او في حالة لم تشكل
+                                أي تهديد للشرطي</span></div>
+                        <div class="rule-item"><span class="rule-number">14.</span> <span class="rule-text">الصدم
+                                العشوائي + حبس المجرم والتعامل مع وهو ميت</span></div>
+                        <div class="rule-item"><span class="rule-number">15.</span> <span class="rule-text">واي مخالفة
+                                للرول بلاي (مطلوب منك الإستكمال وسيتم التعامل مع الشرطي من قبل الرقابة الإدارية)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قوانين المشاهير والستريمرز -->
+    <section class="rules-section" id="celebrity-rules" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">📋 قوانين المشاهير والستريمرز</h2>
+            <p class="rules-intro">
+                الشروط المطلوبة للحصول على عضوية ستريمر في NEXUS CITY
+            </p>
+
+            <div class="rules-container">
+                <!-- القوانين العامة -->
+                <div class="rule-category">
+                    <div class="rule-header" onclick="toggleRule('celebrity-general')">
+                        <img src="images/general-rules-icon.png" alt="General Rules" class="rule-icon">
+                        <h3>الشروط الأساسية</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="rule-content" id="celebrity-general">
+                        <div class="rule-item"><span class="rule-number">1.</span> <span class="rule-text">عدد المتابعين
+                                لا يقل عن 2000 متابع</span></div>
+                        <div class="rule-item"><span class="rule-number">2.</span> <span class="rule-text">البث بشكل
+                                مستمر في المدينة</span></div>
+                        <div class="rule-item"><span class="rule-number">3.</span> <span class="rule-text">حفظ البثوث في
+                                القناة للحفاظ على حقوقك</span></div>
+                        <div class="rule-item"><span class="rule-number">4.</span> <span class="rule-text">مشاركة روابط
+                                NEXUS CITY في عنوان أو وصف كل بث</span></div>
+                    </div>
+                </div>
+
+                <!-- قوانين المحتوى -->
+                <div class="rule-category">
+                    <div class="rule-header" onclick="toggleRule('celebrity-content')">
+                        <img src="images/general-rules-icon.png" alt="Content Rules" class="rule-icon">
+                        <h3>قوانين المحتوى</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="rule-content" id="celebrity-content">
+                        <div class="rule-item"><span class="rule-number">1.</span> <span class="rule-text">الإلتزام
+                                بتطبيق القوانين وعدم مخالفة النظام العام</span></div>
+                        <div class="rule-item"><span class="rule-number">2.</span> <span class="rule-text">مشاركة مقاطع
+                                قصيرة من المدينة</span></div>
+                        <div class="rule-item"><span class="rule-number">3.</span> <span class="rule-text">إظهار المدينة
+                                بصورة لائقة وعدم تشويه سمعتها</span></div>
+                        <div class="rule-item"><span class="rule-number">4.</span> <span class="rule-text">المسؤولية
+                                الكاملة على محتوى البث تقع على الستريمر</span></div>
+                    </div>
+                </div>
+
+                <!-- ملاحظات هامة -->
+                <div class="rule-category">
+                    <div class="rule-header" onclick="toggleRule('celebrity-notes')">
+                        <img src="images/general-rules-icon.png" alt="Important Notes" class="rule-icon">
+                        <h3>ملاحظات هامة</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="rule-content" id="celebrity-notes">
+                        <div class="rule-item"><span class="rule-number">•</span> <span class="rule-text">التقديم يعني
+                                الموافقة على جميع الشروط</span></div>
+                        <div class="rule-item"><span class="rule-number">•</span> <span class="rule-text">أي مخالفة يتم
+                                التعامل معها بعد انتهاء البث</span></div>
+                        <div class="rule-item"><span class="rule-number">•</span> <span class="rule-text">جميع القوانين
+                                قابلة للتعديل</span></div>
+                        <div class="rule-item"><span class="rule-number">•</span> <span class="rule-text">الإدارة تحتفظ
+                                بحق إلغاء العضوية لأي سبب</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Celebrities Section -->
+    <section class="celebrities-section" id="celebrities" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">المشاهير</h2>
+            <p class="rules-intro">
+                مرحبا بكم في مشاهير NEXUS CITY
+            </p>
+
+            <div class="celebrities-container">
+                <!-- Celebrity Cards will be added here by JavaScript -->
+            </div>
+
+            <div class="back-to-rules">
+                <button onclick="toggleSections()" class="back-btn">
+                    العودة إلى القوانين
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discord Section -->
+    <section class="discord-section">
+        <div class="container">
+            <div class="discord-content">
+                <img src="images/discord-large-icon.png" alt="Discord" class="discord-icon">
+                <h3>انضم إلى دسكورد السرفر</h3>
+                <p>تواصل مع المجتمع واحصل على التحديثات</p>
+                <a href="https://discord.gg/7NsEv27jcy" class="discord-btn" target="_blank">
+                    <img src="images/discord-large-icon.png" alt="Join" class="btn-icon">
+                    انضم الآن
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="cfw">CFW</span>
+                    <span class="city">CITY</span>
+                    <span class="nexus">NEXUS</span>
+                </div>
+                <p class="footer-text">© 2025 NEXUS CITY CFW. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="tiktok.js"></script>

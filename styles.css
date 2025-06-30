@@ -1,0 +1,858 @@
+/* ====== الأساسيات والإعدادات الأولية ====== */
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a0b2e 0%, #16213e 50%, #0f3460 100%);
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ====== الرأس (Header) ====== */
+.header {
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #8b5cf6;
+    transition: all 0.3s ease;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.skull-logo {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 10px #8b5cf6);
+    animation: pulse 2s infinite;
+}
+
+.server-name {
+    display: flex;
+    gap: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nexus { color: #8b5cf6; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); }
+.city { color: #ffffff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); }
+.cfw { color: #8b5cf6; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); }
+
+/* ====== قسم البطل (Hero Section) ====== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="%23ffffff10" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-transparent-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    opacity: 0.15;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: float 6s ease-in-out infinite;
+    overflow: hidden;
+}
+
+.hero-transparent-image img {
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.5));
+}
+
+.hero-skull {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 20px #8b5cf6);
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    animation: fadeInUp 1s ease-out;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+}
+
+.stat-text {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* ====== قسم القوانين ====== */
+.rules-section {
+    padding: 5rem 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #8b5cf6;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: 700;
+}
+
+.rules-intro {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    font-weight: 400;
+}
+
+.rules-container {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.rule-category {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rule-category:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+}
+
+.rule-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background: rgba(139, 92, 246, 0.2);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.rule-header:hover {
+    background: rgba(139, 92, 246, 0.3);
+}
+
+.rule-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: 700;
+}
+
+.rule-icon {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.rule-category.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.rule-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.rule-category.active .rule-content {
+    max-height: none;
+    overflow-y: auto;
+}
+
+.rule-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+}
+
+.rule-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.rule-item:last-child {
+    border-bottom: none;
+}
+
+.rule-number {
+    background: #8b5cf6;
+    color: #ffffff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.rule-text {
+    flex: 1;
+    line-height: 1.5;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* ====== قسم المشاهير ====== */
+.celebrities-section {
+    padding: 5rem 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.celebrities-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.celebrity-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.celebrity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+.celebrity-image {
+    height: 200px;
+    overflow: hidden;
+    background: #2d3748;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.celebrity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.celebrity-card:hover .celebrity-image img {
+    transform: scale(1.1);
+}
+
+.celebrity-info {
+    padding: 1.5rem;
+}
+
+.celebrity-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #8b5cf6;
+}
+
+.celebrity-info p {
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.tiktok-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(45deg, #8625f4, #522cfe);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.tiktok-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.685);
+}
+
+/* ====== قسم الديسكورد ====== */
+.discord-section {
+    padding: 4rem 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.discord-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.discord-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 15px #8b5cf6);
+    animation: pulse 2s infinite;
+    width: 60px;
+    height: 60px;
+}
+
+.discord-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #8b5cf6;
+}
+
+.discord-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.discord-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(45deg, #8b5cf6, #a855f7);
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.discord-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+    background: linear-gradient(45deg, #a855f7, #8b5cf6);
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+    width: 20px;
+    height: 20px;
+}
+
+/* ====== التذييل (Footer) ====== */
+.footer {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 2rem 0;
+    border-top: 2px solid #8b5cf6;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-text {
+    opacity: 0.7;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+/* ====== أزرار التبديل بين الأقسام ====== */
+.section-toggle-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-toggle-btn {
+    background: linear-gradient(45deg, #8b5cf6, #a855f7);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.section-toggle-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+    background: linear-gradient(45deg, #a855f7, #8b5cf6);
+}
+
+.section-toggle-btn.active {
+    background: linear-gradient(45deg, #6d28d9, #7e22ce);
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.5);
+}
+
+.section-toggle-btn .btn-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.section-toggle-btn:hover .btn-icon {
+    transform: scale(1.1);
+}
+
+/* تأثير النبض للزر النشط */
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+    50% { box-shadow: 0 0 0 10px rgba(139, 92, 246, 0); }
+}
+
+.section-toggle-btn.pulse {
+    animation: pulse-glow 2s infinite;
+}
+
+/* ====== أزرار القسم ====== */
+.section-header-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.celebrities-btn, .back-btn {
+    background: linear-gradient(45deg, #8b5cf6, #a855f7);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.celebrities-btn:hover, .back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+}
+
+.back-btn {
+    margin-top: 2rem;
+}
+
+/* ====== التأثيرات والرسوم المتحركة ====== */
+/* تأثيرات الجسيمات */
+.music-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.music-particle {
+    position: absolute;
+    background: linear-gradient(45deg, #8b5cf6, #a855f7);
+    border-radius: 50%;
+    opacity: 0.7;
+    filter: blur(1px);
+    animation: floatParticle 5s infinite ease-in-out;
+}
+
+/* تأثير التموج */
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(139, 92, 246, 0.4);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+/* النصوص العائمة */
+.floating-text {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: bold;
+    opacity: 0.1;
+    animation: floatText 15s infinite ease-in-out;
+    z-index: 1;
+}
+
+/* أنماط وسائل التواصل الاجتماعي */
+.social-links, .social-badges {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-badges {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: rgba(44, 11, 105, 0.7);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(44, 11, 105, 0.1);
+}
+
+.social-btn:hover {
+    transform: translateY(-3px) scale(1.1);
+}
+
+.social-btn img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+
+
+/* ====== الرسوم المتحركة ====== */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatParticle {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.7; }
+    50% { transform: translateY(-20px) scale(1.2); opacity: 1; }
+}
+
+@keyframes ripple {
+    to { transform: scale(4); opacity: 0; }
+}
+
+@keyframes floatText {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-50px) rotate(5deg); }
+}
+
+/* ====== التصميم المتجاوب ====== */
+@media (max-width: 768px) {
+    .server-name {
+        font-size: 1.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+        gap: 1rem;
+    }
+    
+    .stat {
+        padding: 0.8rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .rule-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .rule-item {
+        padding: 0.8rem 1rem;
+    }
+    
+    .celebrities-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .celebrity-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .rule-header {
+        padding: 1rem;
+    }
+    
+    .rule-item {
+        padding: 0.8rem;
+        gap: 0.8rem;
+    }
+}
+
+/* ====== تعديلات الصور ====== */
+.skull-logo img,
+.hero-skull img {
+    width: 100%;
+    height: auto;
+}
+
+.skull-logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.hero-skull img {
+    width: 300px;
+    height: 300px;
+}
+
+.discord-large-icon {
+    width: 80px;
+    height: 80px;
+}
+
+/* تنسيقات قوانين السرقات */
+.robbery-type {
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 3px solid #8b5cf6;
+}
+
+
+
+.robbery-details p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.robbery-details i {
+    width: 20px;
+    text-align: center;
+    color: #a855f7;
+}
+
+/* تعديلات لأيقونات القوانين */
+.rule-icon i {
+    color: #8b5cf6;
+}
+
+.toggle-arrow i {
+    color: #8b5cf6;
+}
+
+.robbery-type h4 i,
+.robbery-details p i {
+    color: #8b5cf6;
+}
+
+/* أيقونات الأقسام الرئيسية */
+.rule-category .rule-header .rule-icon i {
+    color: #8b5cf6;
+}
+
+/* أيقونات القوانين الفرعية */
+.rule-item i {
+    color: #8b5cf6;
+    margin-left: 8px;
+}
+
+/* أيقونات المناطق الآمنة */
+#safe-zones .rule-item i {
+    color: #8b5cf6;
+    margin-right: 8px;
+}
+
+/* أيقونات قوانين الخطف */
+#kidnapping-rules .rule-item i {
+    color: #8b5cf6;
+    margin-right: 8px;
+}
+
+/* أيقونات القوانين العامة */
+#general-rules .rule-number {
+    background: #8b5cf6;
+    color: white;
+}
+
+/* تأثيرات إضافية */
+.rule-icon i:hover,
+.toggle-arrow i:hover {
+    filter: drop-shadow(0 0 5px rgba(139, 92, 246, 0.7));
+    transition: all 0.3s ease;
+}
